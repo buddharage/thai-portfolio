@@ -1,2 +1,2 @@
-thai-portfolio
+Thai Le's Portfolio App
 ==============
