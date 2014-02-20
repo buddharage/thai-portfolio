@@ -1,11 +1,9 @@
-App = Ember.Application.create();
-
-App.Router.map(function() {
-  // put your routes here
+require([
+	"App",
+	"ember",
+],
+function(App, Ember) {
+	var app_name = "ThaiPortfolio";
+	window[app_name] = App = Ember.Application.create(App);
 });
 
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
-});

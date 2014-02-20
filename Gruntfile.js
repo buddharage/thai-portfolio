@@ -19,7 +19,6 @@ module.exports = function(grunt) {
 		compass : {
 			dev : {
 				options : {
-					basePath : 'assets/',
 					config : 'config.rb',
 				}
 			}
@@ -81,20 +80,11 @@ module.exports = function(grunt) {
 
 	require('load-grunt-tasks')(grunt);
 
-	grunt.registerTask('watch', [
-		'compass:dev',
-		'watch'
-	]);
-
 	grunt.registerTask('default', [
-		'clean:dev',
-		'concat:dev',
 		'compass:dev',
 	]);
 
 	grunt.registerTask('dev', [
-		'clean:dev',
-		'concat:dev',
 		'compass:dev',
 		'watch',
 	]);

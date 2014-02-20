@@ -33,15 +33,3 @@
 	url($fontDir + 'OpenSans/Italic/OpenSans-Italic.ttf') format('truetype'),
 	url($fontDir + 'OpenSans/Italic/OpenSans-Italic.svg#webfont6izVs1DN') format('svg');
 }
-
-// IcoMoon
-@font-face {
-	font-family: 'IcoMoon';
-	src:url($fontDir + 'IcoMoon/IcoMoon.eot');
-	src:url($fontDir + 'IcoMoon/IcoMoon.eot?#iefix') format('embedded-opentype'),
-		url($fontDir + 'IcoMoon/IcoMoon.ttf') format('truetype'),
-		url($fontDir + 'IcoMoon/IcoMoon.woff') format('woff'),
-		url($fontDir + 'IcoMoon/IcoMoon.svg#IcoMoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
