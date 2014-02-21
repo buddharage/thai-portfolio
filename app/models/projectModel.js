@@ -1,8 +1,13 @@
 define([
 	"ember"
 ], function(Ember) {
-	var Project = DS.Model.extend({
-		title: DS.attr('string'),
+	var ProjectModel = Ember.Object.extend({
+		title: null
 	});
 
+	ProjectModel.FIXTURES = [
+		{
+			title: 'VICE News'
+		}
+	];
 });

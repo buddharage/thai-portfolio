@@ -1,23 +1,26 @@
 require.config({
-	deps: ["main"],
+	deps: ['main'],
 
 	shim: {
-		'ember': {
-			deps: ['handlebars', 'jquery'],
+		Ember: {
+			deps: ['Handlebars', 'Jquery'],
 			exports: 'Ember'
 		},
+
+		DS: {
+			deps: ['Ember'],
+			exports: 'DS'
+		},
+
 	},
 
 	paths: {
-		'App': 'app',
-		'models': 'models',
-		'views': 'views',
-		'controllers': 'controllers',
-		'routes': 'routes',
+		App: 'app',
 
 		// libraries
-		'jquery': 'libs/jquery-1.10.2',
-		'handlebars': 'libs/handlebars-1.1.2',
-		'ember': 'libs/ember-1.4.0'
-	},
+		Jquery: 'libs/jquery-1.10.2',
+		Handlebars: 'libs/handlebars-1.1.2',
+		Ember: 'libs/ember-1.4.0',
+		DS: 'lib/ember-data'
+	}
 });

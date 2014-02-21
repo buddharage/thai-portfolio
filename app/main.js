@@ -1,9 +1,21 @@
 require([
-	"App",
-	"ember",
+	'App',
+	'Ember',
 ],
 function(App, Ember) {
-	var app_name = "ThaiPortfolio";
-	window[app_name] = App = Ember.Application.create(App);
+
+	App.deferReadiness();
+
+	require([
+		'router',
+	],
+	function (Router) {
+		// Configure router.
+		Router();
+
+		// We're ready to launch the app!
+		App.advanceReadiness();
+	});
+
 });
 

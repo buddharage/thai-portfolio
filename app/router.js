@@ -1,12 +1,26 @@
-define(["ember"], function(Ember) {
+define([
+	'Ember',
+	'App'
+], function(Ember, App) {
+	return function() {
+		App.Router.map(function() {
+			this.resource('projects');
 
-  var Router = Ember.Router.extend();
+			this.resource('project', {
+				path: '/project/:project_id'
+			});
+		});
 
-  Router.map(function() {
-    this.route("index", {
-      path: "/"
-    });
-  });
-
-  return Router;
+		App.ProjectsRoute = Ember.Route.extend({
+			model: function(params) {
+				return [{
+					title: 'VICE News',
+					url: 'http://news.vice.com',
+				}, {
+					title: 'Brisk Bodega',
+					url: 'http://briskbodega.com'
+				}];
+			}
+		});
+	}
 });
