@@ -1,26 +1,22 @@
 define([
 	'Ember',
-	'App'
-], function(Ember, App) {
+	'App',
+	'fixtures/projects'
+], function(Ember, App, ProjectFixtures) {
 	return function() {
 		App.Router.map(function() {
-			this.resource('projects');
-
-			this.resource('project', {
-				path: '/project/:project_id'
+			this.resource('projects', { path: '/' }, function() {
+				this.resource('project', {
+					path: ':project_id'
+				});
 			});
 		});
 
 		App.ProjectsRoute = Ember.Route.extend({
 			model: function(params) {
-				return [{
-					title: 'VICE News',
-					url: 'http://news.vice.com',
-				}, {
-					title: 'Brisk Bodega',
-					url: 'http://briskbodega.com'
-				}];
+				return ProjectFixtures;
 			}
 		});
-	}
+
+	};
 });

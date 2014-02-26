@@ -21,6 +21,18 @@
 
   <script type="text/x-handlebars" id="projects">
     <h1>Projects</h1>
+
+    <ul>
+      {{#each}}
+      <li>{{#link-to 'project' this}}{{title}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="project">
+    <h1>{{title}}</h1>
   </script>
 
   <script data-main="./app/config" src="./app/libs/require.js"></script>

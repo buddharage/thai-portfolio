@@ -1,8 +1,7 @@
 require([
-	'App',
-	'Ember',
+	'App'
 ],
-function(App, Ember) {
+function(App) {
 
 	App.deferReadiness();
 
