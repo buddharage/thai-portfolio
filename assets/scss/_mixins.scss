@@ -1,3 +1,42 @@
+@mixin respond-to($value, $condition: min-width, $media: screen){
+
+	@if $value == bp280{
+		$value: 17.5em;
+	}@else if $value == bp450{
+		$value: 31.25em;
+	}@else if $value == bp550{
+		$value: 34.375em;
+	}@else if $value == bp600{
+		$value: 37.5em;
+	}@else if $value == bp650{
+		$value: 40.625em;
+	}@else if $value == bp700{
+		$value: 43.75em;
+	}@else if $value == bp750{
+		$value: 46.875em
+	}@else if $value == bp800{
+		$value: 50em;
+	}@else if $value == bp850{
+		$value: 53.125em;
+	}@else if $value == bp900{
+		$value: 56.25em;
+	}@else if $value == bp970{
+		$value: 60.625em;
+	}@else if $value == bp1000{
+		$value: 62.5em;
+	}@else if $value == bp1150{
+		$value: 71.875em;
+	}@else if $value == bp1200{
+		$value: 75em;
+	}@else if $value == bpheight240{
+		$value: 15em;
+	}@else if $value == bpheight300{
+		$value: 18.75em;
+	}
+
+	@media only #{$media} and ($condition: $value){@content;}
+}
+
 @mixin clearfix(){
 	overflow:hidden;
 	zoom:1;
@@ -18,6 +57,25 @@
 	}
 }
 
+@mixin wrapper(){
+	margin: 0 auto;
+	max-width: $desktopMaxWidth;
+	padding-left: 1em;
+	padding-right: 1em;
+
+	@include respond-to(bp1000) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@mixin defaults($width: 100%, $margin: 0 auto, $padding: 0, $position: relative){
+	width: $width;
+	margin: $margin;
+	padding: $padding;
+	position: $position;
+}
+
 @mixin transitions($prop: all, $time: 0.3 + s, $ease: ease-in-out, $delay: 0s){
 	-webkit-transition: $prop $time $ease $delay;
 	-moz-transition: $prop $time $ease $delay;
@@ -29,6 +87,16 @@
 	opacity: $a / 100;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$a})";
 	filter: alpha(opacity = $a);
+}
+
+@mixin gradient($from, $to, $start, $end, $imp: false){
+	background: -moz-linear-gradient(top, $from $start, $to $end); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($start, $from), color-stop($end, $to)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $from $start, $to $end); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $from $start, $to $end); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $from $start, $to $end); /* IE10+ */
+	background: linear-gradient(top, $from $start, $to $end); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 ); /* IE6-9 */
 }
 
 @mixin user-select($val: none){

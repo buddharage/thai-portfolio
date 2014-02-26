@@ -7,9 +7,9 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <header id="main-header">
-      <h1>Thai Le</h1>
-      <h2 class="tagline">Web developer, real human being, and  a real hero</h2>
+    <header class="global-header">
+      <h1 class="site-logo">Thai Le</h1>
+      <div class="tagline">Web developer</div>
 
       <div class="info">
         Brooklyn, NY
@@ -20,15 +20,19 @@
   </script>
 
   <script type="text/x-handlebars" id="projects">
-    <h1>Projects</h1>
+    <section class="projects-section main-section">
+      <ul>
+        {{#each}}
+          <li>
+            {{#link-to 'project' this}}
+              {{title}}
+            {{/link-to}}
+          </li>
+        {{/each}}
+      </ul>
 
-    <ul>
-      {{#each}}
-      <li>{{#link-to 'project' this}}{{title}}{{/link-to}}</li>
-      {{/each}}
-    </ul>
-
-    {{outlet}}
+      {{outlet}}
+    </section>
   </script>
 
   <script type="text/x-handlebars" id="project">
