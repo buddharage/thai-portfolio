@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		clean : {
 			dev : {
 				src : [
-					'',
+					'assets/images/icons'
 				]
 			},
 			prod : {
@@ -37,6 +37,17 @@ module.exports = function(grunt) {
 				],
 				dest : '',
 			},
+		},
+
+		grunticon: {
+			icons: {
+				files: [{
+					expand: true,
+					cwd: 'assets/images/svg',
+					src: ['*.svg', '*.png'],
+					dest: 'assets/images/icons'
+				}]
+			}
 		},
 
 		removelogging : {
@@ -81,11 +92,14 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('default', [
+		'clean:dev',
 		'compass:dev',
+		'grunticon:icons',
 	]);
 
 	grunt.registerTask('dev', [
 		'compass:dev',
+		'grunticon:icons',
 		'watch',
 	]);
 

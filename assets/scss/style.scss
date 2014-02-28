@@ -3,7 +3,10 @@
 @import "variables";
 @import "fontface";
 @import "mixins";
-@import "custom_ember";
+
+* {
+	@include box-sizing(border-box);
+}
 
 html {
 	height: 100%;
@@ -24,35 +27,183 @@ body {
 }
 
 .global-header {
-	background: url($imageDir + "/arya_behind_chair.jpg") #444;
-	background-attachment: fixed;
+	background: #444;
 	color: white;
-	height: 100%;
-	padding: 2rem 2.5rem;
+	overflow: hidden;
+	min-height: 6rem;
+	padding: 1.3rem 2.5rem;
+	position: relative;
 	text-align: center;
 	width: 100%;
 
-	.site-logo {
-		@include defaults();
-		font-size: 6em;
+	@include respond-to(bp750) {
+		height: 100%;
+		padding: 2rem 2.5rem;
 	}
 
-	.tagline {
-		font-size: 2em;
-		margin: 0.3em 0;
-	}
-}
+	.bg {
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
 
-.projects-section {
-	ul {
-		@include defaults();
-		list-style: none;
+		@include respond-to(bp750) {
+			opacity: 1;
+		}
 
-		li {
-			@include defaults(33.3333%);
-			display: inline-block;
+		&:after {
+			@include box-shadow(inset 0 0 13em #000);
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+
+		img {
+			@include translate(-50%, 0);
+			height: 100%;
+			left: 50%;
+			position: absolute;
+			top: 0;
+			width: auto;
+
+			@include respond-to(bp1150) {
+				height: auto;
+				width: 100%;
+			}
 		}
 	}
 
+	.site-logo {
+		@include defaults();
+		font-size: 3em;
+
+		@include respond-to(bp750) {
+			font-size: 6em;
+		}
+	}
+
+	.tagline {
+		@include defaults();
+		font-size: 1em;
+		margin: 0.3em 0;
+
+		@include respond-to(bp750) {
+			font-size: 2em;
+		}
+	}
+
+	.info {
+		@include defaults();
+	}
+
+	.socials {
+		@include defaults();
+		margin: 2em 0 0;
+		text-align: center;
+
+		[class^=icon-] {
+			background-size: 100% auto;
+			display: inline-block;
+			height: 1.5rem;
+			margin: 0 0.6em;
+			opacity: 0.8;
+			width: 1.5rem;
+
+			@include respond-to(bp750) {
+				height: 3rem;
+				width: 3rem;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.cta {
+		@include defaults();
+		@include translate(-50%, 0);
+		bottom: 1.75rem;
+		cursor: pointer;
+		display: none;
+		font-size: 1rem;
+		left: 50%;
+		position: absolute;
+
+		@include respond-to(bp750) {
+			bottom: 6rem;
+			display: block;
+			font-size: 3rem;
+		}
+
+		.site-icon {
+			background-size: 100% auto;
+			bottom: -1.3em;
+			height: 1em;
+			left: 50%;
+			@include translate(-50%, 0);
+			position: absolute;
+			width: 1em;
+		}
+	}
+}
+
+.main-section {
+	@include clearfix();
+}
+
+.projects-section {
+	background: white;
+	@include defaults();
+
+	ul {
+		@include defaults();
+		-webkit-flex-flow: row wrap;
+		list-style: none;
+
+		li {
+			@include defaults();
+			overflow: hidden;
+
+			@include respond-to(bp750) {
+				float: left;
+				width: 33.3333%;
+			}
+
+			.thumb {
+				height: 0;
+				padding-bottom: 56%;
+				width: 100%;
+
+				img {
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 100%;
+				}
+			}
+
+			.info {
+				@include display-box();
+				@include box-align(center);
+				@include box-pack(center);
+				background: rgba(0,0,0,0.8);
+				color: white;
+				font-size: 1.6em;
+				height: 100%;
+				left: 0;
+				padding: 15%;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+	}
 }
 

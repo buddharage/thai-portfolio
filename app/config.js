@@ -12,6 +12,10 @@ require.config({
 			exports: 'DS'
 		},
 
+		HoverDir: {
+			deps: ['Jquery']
+		}
+
 	},
 
 	paths: {
@@ -21,6 +25,9 @@ require.config({
 		Jquery: 'libs/jquery-1.10.2',
 		Handlebars: 'libs/handlebars-1.1.2',
 		Ember: 'libs/ember-1.4.0',
-		DS: 'lib/ember-data'
+		DS: 'lib/ember-data',
+
+		// plugins
+		HoverDir: 'plugins/hoverdir'
 	}
 });

@@ -4,29 +4,45 @@
   <meta charset="utf-8">
   <title>Thai Le | Web Developer</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/images/icons/icons.data.svg.css">
 </head>
 <body>
   <script type="text/x-handlebars">
     <header class="global-header">
+      <div class="bg"><img src="/assets/images/thai_rocking.jpg" alt="Thai Le"></div>
+
       <h1 class="site-logo">Thai Le</h1>
       <div class="tagline">Web developer</div>
 
       <div class="info">
         Brooklyn, NY
       </div>
+
+      <div class="socials">
+        <a href="http://facebook.com/thai.viet.le" target="_blank" class="icon-facebook-white site-icon"></a>
+        <a href="http://www.twitter.com/buddharage" target="_blank" class="icon-twitter-white site-icon"></a>
+        <a href="http://www.linkedin.com/in/thaivietle" target="_blank" class="icon-linkedin-white site-icon"></a>
+      </div>
+
+      <div {{action 'goToProjects' target='view'}} class="cta">Projects <span class="site-icon icon-down-arrow-white"></span></div>
     </header>
 
     {{outlet}}
   </script>
 
-  <script type="text/x-handlebars" id="projects">
+  <script type="text/x-handlebars" id="projects" data-template-name="projects">
     <section class="projects-section main-section">
       <ul>
         {{#each}}
-          <li>
-            {{#link-to 'project' this}}
-              {{title}}
-            {{/link-to}}
+          <li class="project">
+            <a target="_blank" {{bind-attr href=url}}>
+              <div class="thumb">
+                <img src="/assets/images/projects/{{unbound image_thumb}}" {{bind-attr alt=title}}>
+              </div>
+              <div class="info">
+                {{unbound title}}
+              </div>
+            </a>
           </li>
         {{/each}}
       </ul>
