@@ -35,12 +35,12 @@ body {
 	color: white;
 	overflow: hidden;
 	min-height: 6rem;
-	padding: 1.3rem 2.5rem;
+	padding: 3.6rem 2.5rem;
 	position: relative;
 	text-align: center;
 	width: 100%;
 
-	@include respond-to(bp750) {
+	@include respond-to($mobileBP) {
 		height: 100%;
 		padding: 2rem 2.5rem;
 	}
@@ -53,15 +53,22 @@ body {
 		width: 100%;
 
 		&:after {
-			@include box-shadow(inset 0 0 13em #000);
+			background: rgba(0,0,0,0.6);
 			content: '';
 			height: 100%;
 			left: 0;
 			position: absolute;
 			top: 0;
 			width: 100%;
-			z-index: -1;
 		}
+
+		@include respond-to($mobileBP) {
+			&:after {
+				background: transparent;
+				@include box-shadow(inset 0 0 13em #000);
+			}
+		}
+
 
 		img {
 			@include translate(-50%, 0);
@@ -82,7 +89,7 @@ body {
 		@include defaults();
 		font-size: 3em;
 
-		@include respond-to(bp750) {
+		@include respond-to($mobileBP) {
 			font-size: 6em;
 		}
 	}
@@ -92,7 +99,7 @@ body {
 		font-size: 1em;
 		margin: 0.3em 0;
 
-		@include respond-to(bp750) {
+		@include respond-to($mobileBP) {
 			font-size: 2em;
 		}
 	}
@@ -103,19 +110,21 @@ body {
 
 	.socials {
 		@include defaults();
-		margin: 2em 0 0;
+		margin: 3em 0 0;
 		text-align: center;
 
 		[class^=icon-] {
 			background-size: 100% auto;
 			display: inline-block;
-			height: 1.5rem;
-			margin: 0 0.6em;
+			height: 2rem;
+			margin: 0 0.75em;
 			opacity: 0.8;
-			width: 1.5rem;
+			vertical-align: top;
+			width: 2rem;
 
-			@include respond-to(bp750) {
+			@include respond-to($mobileBP) {
 				height: 3rem;
+				margin: 0 1.5em;
 				width: 3rem;
 			}
 
@@ -135,7 +144,7 @@ body {
 		left: 50%;
 		position: absolute;
 
-		@include respond-to(bp750) {
+		@include respond-to($mobileBP) {
 			bottom: 6rem;
 			display: block;
 			font-size: 3rem;
@@ -170,7 +179,7 @@ body {
 			@include defaults();
 			overflow: hidden;
 
-			@include respond-to(bp750) {
+			@include respond-to($mobileBP) {
 				float: left;
 				width: 33.3333%;
 			}
