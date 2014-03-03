@@ -22,7 +22,7 @@ require.config({
 		App: 'app',
 
 		// libraries
-		Jquery: 'libs/jquery-1.10.2',
+		Jquery: 'libs/jquery-2.1.0',
 		Handlebars: 'libs/handlebars-1.1.2',
 		Ember: 'libs/ember-1.4.0',
 		DS: 'lib/ember-data',

@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 
 		removelogging : {
 			dev : {
-				src : ''
+				src : 'app/**/*.js'
 			}
 		},
 
