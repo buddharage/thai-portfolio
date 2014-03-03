@@ -4,6 +4,8 @@
 @import "fontface";
 @import "mixins";
 
+@import "reusables";
+
 * {
 	@include box-sizing(border-box);
 }
@@ -14,6 +16,8 @@ html {
 
 body {
 	@include defaults();
+	background: #1d1f20;
+	color: white;
 	font-family: $fontStack;
 	height: 100%;
 

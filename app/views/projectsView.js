@@ -1,6 +1,6 @@
 define([
 	'Ember',
-	'plugins/hoverdir'
+	'HoverDir'
 ], function(Ember) {
 	return Ember.View.extend({
 		templateName: 'projects',
