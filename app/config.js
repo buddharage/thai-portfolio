@@ -28,6 +28,7 @@ require.config({
 		DS: 'lib/ember-data',
 
 		// plugins
+		MQ: 'plugins/onmediaquery',
 		HoverDir: 'plugins/hoverdir'
 	}
 });

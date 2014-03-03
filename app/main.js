@@ -2,8 +2,6 @@ require([
 	'App'
 ],
 function(App) {
-
-	console.time('Ember');
 	App.deferReadiness();
 
 	require([

@@ -16,7 +16,7 @@ html {
 
 body {
 	@include defaults();
-	background: #1d1f20;
+	background: $bgColor;
 	color: white;
 	font-family: $fontStack;
 	height: 100%;
@@ -167,7 +167,7 @@ body {
 }
 
 .projects-section {
-	background: white;
+	background: $bgColor;
 	@include defaults();
 
 	ul {
@@ -175,12 +175,15 @@ body {
 		-webkit-flex-flow: row wrap;
 		list-style: none;
 
-		li {
+		.project {
 			@include defaults();
+			display: block;
+			margin-bottom: 3em;
 			overflow: hidden;
 
 			@include respond-to($mobileBP) {
 				float: left;
+				margin: 0;
 				width: 33.3333%;
 			}
 
@@ -198,18 +201,32 @@ body {
 			}
 
 			.info {
-				@include display-box();
-				@include box-align(center);
-				@include box-pack(center);
-				background: rgba(0,0,0,0.8);
-				color: white;
+				background: rgba(255,255,255,0.8);
+				color: black;
 				font-size: 1.6em;
-				height: 100%;
 				left: 0;
-				padding: 15%;
+				padding: 3%;
 				position: absolute;
-				top: 0;
+				bottom: 0;
 				width: 100%;
+
+				@include respond-to($mobileBP) {
+					background: rgba(0,0,0,0.8);
+					bottom: auto;
+					color: white;
+					@include display-box();
+					@include box-align(center);
+					@include box-pack(center);
+					height: 100%;
+					position: absolute;
+					top: 0;
+				}
+
+				h2 {
+					font-size: 1em;
+					font-weight: normal;
+					margin: 0;
+				}
 			}
 		}
 	}

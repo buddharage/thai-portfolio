@@ -37,6 +37,12 @@
 	@media only #{$media} and ($condition: $value){@content;}
 }
 
+html{
+	font-family: 'bp0';
+	@include respond-to(bp1000) { font-family: 'bp1000'; }
+}
+
+
 @mixin clearfix(){
 	overflow:hidden;
 	zoom:1;
