@@ -136,7 +136,7 @@ body {
 		cursor: pointer;
 		display: none;
 		font-size: 1rem;
-		height: 1.5em;
+		height: 1.75em;
 		left: 50%;
 		position: absolute;
 
@@ -155,7 +155,7 @@ body {
 		}
 
 		.site-icon {
-			@include animate(drop, 1.2s, 1, ease-in-out);
+			@include animate(dropRepeat, 2s, infinite, ease-in-out);
 			background-size: 100% auto;
 			bottom: -1.3em;
 			height: 1em;
@@ -170,11 +170,25 @@ body {
 @include animation(drop) {
 	0% {
 		opacity: 0;
-		@include translate(-50%, -4em);
+		@include translate(-50%, -6em);
 	}
 	100% {
 		opacity: 1;
 		@include translate(-50%, 0);
+	}
+}
+
+@include animation(dropRepeat) {
+	0% {
+		@include translate(-50%, -0.45em);
+	}
+
+	50% {
+		@include translate(-50%, 0);
+	}
+
+	100% {
+		@include translate(-50%, -0.45em);
 	}
 }
 
@@ -192,7 +206,7 @@ body {
 
 		.project {
 			display: block;
-			margin-bottom: 3em;
+			margin-bottom: 1em;
 			position: relative;
 
 			@include respond-to($mobileBP) {
@@ -216,14 +230,13 @@ body {
 			}
 
 			.info {
-				background: rgba(255,255,255,0.8);
-				color: black;
+				background: rgba(41, 36, 132, 0.8);
+				color: $white;
 				font-size: 1.6em;
+				padding: 3%;
 				width: 100%;
 
 				@include respond-to($mobileBP) {
-					background: rgba(0,0,0,0.8);
-					color: $white;
 					@include display-box();
 					@include box-align(center);
 					@include box-pack(center);
