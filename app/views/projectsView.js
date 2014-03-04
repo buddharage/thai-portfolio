@@ -7,13 +7,16 @@ define([
 		templateName: 'projects',
 
 		didInsertElement: function() {
-			var projectEls = $('.projects-section .project'),
+			var projectEls = $('.project'),
 				queries = [
 					{
 						context: 'bp1000',
 						match: function() {
 							projectEls.each(function() {
-								$(this).hoverdir();
+								$(this).hoverdir({
+									easing: 'linear',
+									speed: 200
+								});
 							});
 						},
 						unmatch: function() {
@@ -23,7 +26,7 @@ define([
 									.off('mouseenter.hoverdir, mouseleave.hoverdir')
 									.find('.info').show();
 
-							})
+							});
 						}
 					}
 				];
