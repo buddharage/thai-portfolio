@@ -7,6 +7,8 @@ define([
 		templateName: 'projects',
 
 		didInsertElement: function() {
+			$('.app-loading').remove();
+
 			var projectEls = $('.project'),
 				queries = [
 					{

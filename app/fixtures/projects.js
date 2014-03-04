@@ -48,6 +48,12 @@ define([], function() {
 		url: 'http://springbreakersmovie.com',
 		image_thumb: 'spring-breakers-thumb.jpg',
 	},
+	{
+		id: 9,
+		title: 'Juvederm',
+		url: 'http://juvederm.com',
+		image_thumb: 'juvederm-thumb.jpg',
+	},
 	];
 
 	return projects;
