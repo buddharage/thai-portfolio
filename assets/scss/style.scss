@@ -212,7 +212,7 @@ body {
 			@include respond-to($mobileBP) {
 				float: left;
 				margin: 0;
-				width: 33.3333%;
+				width: 50%;
 			}
 
 			& > a {
