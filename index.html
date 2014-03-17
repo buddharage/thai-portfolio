@@ -40,9 +40,9 @@
       </div>
 
       <div class="socials">
-        <a href="http://facebook.com/thai.viet.le" target="_blank" class="icon-facebook-white site-icon"></a>
-        <a href="http://www.twitter.com/buddharage" target="_blank" class="icon-twitter-white site-icon"></a>
-        <a href="http://www.linkedin.com/in/thaivietle" target="_blank" class="icon-linkedin-white site-icon"></a>
+        <a {{action "onSocialClick" "facebook"}} class="icon-facebook-white site-icon"></a>
+        <a {{action "onSocialClick" "twitter"}} class="icon-twitter-white site-icon"></a>
+        <a {{action "onSocialClick" "linkedin"}} target="_blank" class="icon-linkedin-white site-icon"></a>
       </div>
 
       <div {{action 'goToProjects'}} class="cta"><span class="text">Projects</span> <span class="site-icon icon-down-arrow-white"></span></div>
@@ -56,7 +56,7 @@
       <ul>
         {{#each}}
           <li class="project">
-            <a target="_blank" {{bind-attr href=url}}>
+            <a {{action "onProjectClick" this}}>
               <div class="thumb">
                 <img src="/assets/images/projects/{{unbound image_thumb}}" {{bindAttr alt=title}}>
               </div>

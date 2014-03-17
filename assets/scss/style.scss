@@ -110,6 +110,7 @@ body {
 
 		[class^=icon-] {
 			background-size: 100% auto;
+			cursor: pointer;
 			display: inline-block;
 			height: 2rem;
 			margin: 0 0.75em;
@@ -205,6 +206,7 @@ body {
 		list-style: none;
 
 		.project {
+			cursor: pointer;
 			display: block;
 			margin-bottom: 1em;
 			position: relative;

@@ -15,6 +15,13 @@ define([
 		App.ProjectsRoute = Ember.Route.extend({
 			model: function(params) {
 				return ProjectFixtures;
+			},
+			actions: {
+				onProjectClick: function(project) {
+					window.ga("send", "event", "projects", "click", project.title);
+
+					window.open(project.url);
+				}
 			}
 		});
 

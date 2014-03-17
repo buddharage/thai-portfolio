@@ -1,5 +1,6 @@
 require([
-	'App'
+	'App',
+	'Analytics'
 ],
 function(App) {
 	App.deferReadiness();
@@ -14,7 +15,10 @@ function(App) {
 		// Configure router.
 		Router();
 
+		// Controllers
 		App.ApplicationController = ApplicationController;
+
+		// Views
 		App.ApplicationView = ApplicationView;
 		App.ProjectsView = ProjectsView;
 
