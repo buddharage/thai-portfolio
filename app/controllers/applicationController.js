@@ -7,6 +7,8 @@ define([
 			goToProjects: function() {
 				var mainHeaderHeight = $('.global-header').height();
 				$('body,html').animate({scrollTop: mainHeaderHeight}, '500', 'swing');
+
+				window.ga("send", "event", "cta", "click", "go to projects");
 			},
 
 			onSocialClick: function(socialName) {
