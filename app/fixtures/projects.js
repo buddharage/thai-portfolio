@@ -2,9 +2,9 @@ define([], function() {
 	var projects = [
 	{
 		id: 2,
-		title: 'Brisk Bodega',
-		url: 'http://briskbodega.com',
-		image_thumb: 'brisk-bodega-thumb.jpg',
+		title: 'Munchies',
+		url: 'http://munchies.vice.com',
+		image_thumb: 'munchies-thumb.jpg',
 	},
 	{
 		id: 1,
