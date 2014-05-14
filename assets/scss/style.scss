@@ -208,7 +208,7 @@ body {
 		.project {
 			cursor: pointer;
 			display: block;
-			margin-bottom: 1em;
+			margin: 4em 2em;
 			position: relative;
 
 			@include respond-to($mobileBP) {
