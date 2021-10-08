@@ -1,32 +1,48 @@
 {
-  "name": "thai-portfolio",
-  "author": {
-    "name": "Thai Le",
-    "email": "thai.viet.le@gmail.com"
-  },
-  "contributors": [
-    {
-      "name": "Thai Le",
-      "email": "thai.viet.le@gmail.com"
-    }
-  ],
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/buddharage/thai-portfolio.git"
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^3.13.1",
+    "gatsby-plugin-image": "^1.13.0",
+    "gatsby-plugin-manifest": "^3.13.0",
+    "gatsby-plugin-offline": "^4.13.0",
+    "gatsby-plugin-react-helmet": "^4.13.0",
+    "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-transformer-sharp": "^3.13.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-jshint": "~0.7.2",
-    "grunt-contrib-compass": "~0.7.0",
-    "grunt-remove-logging": "~0.2.0",
-    "grunt-grunticon": "~1.0.0"
+    "autoprefixer": "^10.3.7",
+    "gatsby-plugin-postcss": "^4.14.0",
+    "postcss": "^8.3.9",
+    "prettier": "2.4.1",
+    "tailwindcss": "^2.2.16"
   },
-  "dependencies": {
-    "load-grunt-tasks": "~0.2.0"
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
